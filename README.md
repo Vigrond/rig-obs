@@ -84,6 +84,8 @@ This should be ran **first** so the server is ready before OBS begins recording.
 
 This ffmpeg command starts a TCP server that will listen for OBS from your main rig.  Once it begins recieving, it will then encode to x264 and stream to the Twitch ingest server.
 
+Consider using Google Keep for easy copy-paste into the terminal if you want to fiddle with these settings from a main rig.  (Alternative solutions being sought here, perhaps a bash script)
+
 Full command for easy copy paste (Don't forget to put your ingest and streamkey in):
 
 ```
