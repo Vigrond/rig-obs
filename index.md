@@ -26,7 +26,7 @@ NDI not required!
 
 #### Rig ffmpeg settings
 
-This should be ran first so the "listener" is setup before OBS begins recording.
+This should be ran **first** so the server is ready before OBS begins recording.
 
 * 720p @ 48fps
 * IP staticly set to 192.168.1.252 on rig
@@ -34,9 +34,30 @@ This should be ran first so the "listener" is setup before OBS begins recording.
 * Assumes 8 core processor for 16 threads 
 * Assumes an Android device with ARM processor
 
+Full command for easy copy paste:
+
 ```
 ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?listen=1" -c:v libx264 -x264opts keyint=96:no-scenecut -r 48 -b:v 6000k -minrate 6000k -maxrate 6000k -bufsize 4500k  -profile:v baseline -tune zerolatency -frame_drop_threshold 5.0 -preset superfast -threads 16 -g 96 -keyint_min 48 -c:a copy -bsf:a aac_adtstoasc -flvflags no_duration_filesize -f flv " rtmp://{ingest}.contribute.live-video.net/app/{stream_key}"
 ```
+
+| Setting                                                  |  Notes         |
+| -------------                                          |  ------------- |
+| `-loglevel warning`   |  If you want lots of output, use `debug` instead  |
+| `-r 48`         | Keep the rate at 48fps when decoding our hevc stream, and when we encode as well.  |
+| `-fflags nobuffer`           | We want to keep latency low  |
+| `-i "tcp://192.168.1.252:9000?listen=1"`           | We start this connection as a server, as indicated by ?listen=1 |
+| `-c:v libx264`              | We are going to encode to x264 for Twitch  |
+| `-x264opts keyint=96:no-scenecut`          | Keyframe interval every 96 frames, or 2*fps, which is equivelent to every 2 seconds when fps is 48.  |
+| `-b:v 6000k -minrate 6000k -maxrate 6000k -bufsize 4500k `             | Constant bitrate set at the maximum our  network can handle for Twitch.  Buffer size can be .5x-2x the rate depending on screen movement |
+| `-profile:v baseline -tune zerolatency`           | We want low latency, so we choose baseline without much of the time consuming features, and we set tune to `zerolatency`.  |
+| `-frame_drop_threshold 5.0`           | If our frames begin lagging behind too much (more than 5), go ahead and drop them to help keep up. |
+| `-preset superfast -threads 16`              | Preset should likely be ultrafast, superfast, or veryfast depending on the power of your processor.  Threads should be 2*cores.  In this case the Android phone has 8 cores.  Remember, ARM Processor cores are not all equal. |
+| `-g 96 -keyint_min 48`           | More keyframe settings to maintain 2 per second.  |
+| `-c:a copy`           | Just copy the audio stream as is.  No decoding necessary. |
+| `-bsf:a aac_adtstoasc`              | Or so we thought.  mpegts container requires we do a bit of work on our audio before sending it  |
+| `-flvflags no_duration_filesize`              | Remove unnecessary header info to cleanup debug logs a bit  |
+| `-f flv " rtmp://{ingest}.contribute.live-video.net/app/{stream_key}` | Send our output to a Twitch ingest server.  https://stream.twitch.tv/ingests/  This is also where your stream key goes.  |
+
 
 #### OBS Setup
 
