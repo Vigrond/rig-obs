@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+## Welcome to rig-obs
 
-You can use the [editor on GitHub](https://github.com/Vigrond/rig-obs/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This page will serve as a basic guide to get your own rig-obs project going.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Using native OBS and ffmpeg, you can have your own streaming rig setup on another PC, a smartphone, or any device that can run ffmpeg.
 
-### Markdown
+NDI not required!
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Demo
 
-```markdown
-Syntax highlighted code block
+* Pixel 4A
+* 720p @ 48fps easy
+* Low latency and twitch stable
+* < 1% CPU usage on OBS
+* Works over WiFi
 
-# Header 1
-## Header 2
-### Header 3
+[See this link for a basic demo](https://streamable.com/28gcyw)
 
-- Bulleted
-- List
+### Technology
 
-1. Numbered
-2. List
+* OBS Studio
+* ffmpeg
+* hevc/h265, h264
 
-**Bold** and _Italic_ and `Code` text
+### Support or Feedback
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Vigrond/rig-obs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Head over to [Issues] for Support or [Discussions] for feedback
