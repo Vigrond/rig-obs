@@ -2,9 +2,11 @@
 
 This [page](https://vigrond.github.io/rig-obs/) will serve as a basic guide to get your own rig-obs project going.
 
-Using native OBS and ffmpeg, you can have your own streaming rig setup on another PC, a smartphone, or any device that can run ffmpeg.
+* rig-obs simply allows you to setup a streaming rig away from your main rig.  This setup is commonly called a Dual PC streaming setup, but the phrase isn't accurate in this case because with rig-obs you can use a wide array of devices - not just PCs.
+* rig-obs is simply a technical guide, no code, plugin, or software outside of OBS and ffmpeg is needed.
+* rig-obs has been shown to work on smartphones such as the Pixel 4a.  It can work with any device that can run OBS Studio or ffmpeg including Windows, OS X, Linux, Android, and IOS.
 
-NDI not required!
+See the demo below for a quick video showing a Pixel 4a encoding an Overwatch stream to Twitch.tv.  Note the near 0 CPU usage of OBS Studio.
 
 ### Disclaimer
 
@@ -38,6 +40,10 @@ Have you tested a device?  Please see "Feedback" at the bottom of this document
 ### General Idea
 
 Use h265/hevc to efficiently get your OBS stream off your main rig, and have another device encode it for your streaming service.
+
+A TCP server is setup on your streaming rig to accept your main rig's OBS stream that is efficiently encoded with hevc/h265 with minimal resource usage.
+
+Once it begins recieving, it can then begin encoding to h264 for popular streaming services like Twitch.
 
 ### Preparing your Streaming Rig
 
