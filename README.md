@@ -66,9 +66,23 @@ For this example, we'll setup ffmpeg on an Android device.
 Ensure Termux and Termux Widget are installed from F Droid
 Then in Termux...
 
-mkdir -p $HOME/.shortcuts
-touch $HOME/./shortcuts/server.sh
-chmod +x $HOME/./shortcuts/server.sh
+mkdir -p /data/data/com.termux/files/home/.shortcuts
+touch /data/data/com.termux/files/home/.shortcuts/server.sh
+chmod +x /data/data/com.termux/files/home/.shortcuts/server.sh
+
+Put the ffmpeg command into server.sh
+
+nano /data/data/com.termux/files/home/.shortcuts/server.sh
+
+paste ffmpeg code
+
+ctrl x to save/close
+y to confirm
+
+Then on the Android screen, press and hold a blank area, then go to widgets, then to Termux Widget to place it on the screen.
+The widget should now display server.sh for easy script running
+
+
 ```
 
 #### IOS Device
