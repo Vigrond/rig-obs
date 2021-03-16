@@ -55,8 +55,7 @@ ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?lis
 | `Video Bitrate`              | *4500Kbps*                               |  hevc is heavy to decode, we must be gentle here.  Try about 70% of your twitch bitrate first.  |
 | `Keyframe interval`          | *250*                                    |  We want high compression, so we choose a high I-frame interval  |
 | `Video Encoder `             | *hevc_nvenc*                             |  Our hevc encoder that makes this possible  |
-| `Video Encoder Settings`     | *preset=7 zerolatency=1 profile=rext*    |  We want low latency.
-                                                                             Rext profile is better for our purpose https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7265015, preset reference: https://github.com/Vigrond/rig-obs/blob/gh-pages/hevc_nvenc_options.txt      |
+| `Video Encoder Settings`     | *preset=7 zerolatency=1 profile=rext*    |  We want low latency.  Rext profile is better for our purpose https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7265015, preset reference: https://github.com/Vigrond/rig-obs/blob/gh-pages/hevc_nvenc_options.txt      |
 | `Audio Encoder`              | *aac*                                    |  Choosing `aac` here will let us skip decoding audio and just copy  |
 |  **Audio**                   |                                          |                |
 | `Sample Rate`                | *44.1 kHz*                               |  Lower CPU Usage, not super necessary.  |
