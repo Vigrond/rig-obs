@@ -41,10 +41,10 @@ This should be ran first so the "listener" is setup before OBS begins recording.
 
 Output / Recording
 
-`Type` Custom Output (FFmpeg)
-`FFmpeg Output Type` Output to URL
-`File path or URL` tcp://192.168.1.252:9000
-`Container format` mpegts
+* `Type` Custom Output (FFmpeg)
+* `FFmpeg Output Type` Output to URL
+* `File path or URL` tcp://192.168.1.252:9000
+* `Container format` mpegts
 
 
 ### Support or Feedback
