@@ -8,11 +8,11 @@ NDI not required!
 
 ### Disclaimer
 
-This is still a work in progress.  This documentation mostly assumes an Android device as your rig, as that is the only thing I have tested.
+This is still a work in progress.  This documentation mostly assumes an Android device as your streaming rig, as that is the only thing I have tested.
 
 ### Demo
 
-* Pixel 4A
+* Google Pixel 4a
 * 720p @ 48fps
 * Low latency and twitch stable
 * < 1% CPU usage on OBS
@@ -57,7 +57,7 @@ If you are using OBS Studio on your streaming rig, you can ignore the ffmpeg com
 
 ### Twitch Example
 
-#### Rig ffmpeg command
+#### Streaming Rig ffmpeg command
 
 This should be ran **first** so the server is ready before OBS begins recording.
 
@@ -92,7 +92,11 @@ ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?lis
 | `-f flv " rtmp://{ingest}.contribute.live-video.net/app/{stream_key}` | Send our output to a Twitch ingest server.  https://stream.twitch.tv/ingests/  This is also where your stream key goes.  |
 
 
-#### OBS Setup
+#### Main Rig OBS Setup
+
+These settings apply to your OBS Studio installation on your main rig.
+
+Once the ffmpeg command on your streaming rig is running and accepting connections, you can then hit "Start Recording" in OBS on your main rig to begin.
 
 * Assumes NVIDIA graphics card with hevc_nvenc support
 * Assumes an Android device with ARM processor
