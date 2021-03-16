@@ -54,9 +54,22 @@ Your streaming rig can be a smartphone, a PC, a mac, an Ubuntu box, or anything 
 For this example, we'll setup ffmpeg on an Android device.
 
 - Download and install [Termux](https://github.com/termux/termux-app) from the Play store, or the F Droid store.
+- If you want to easily execute the stream server without having to copy paste often, I highly recommend using the [F Droid store](https://www.f-droid.org/) to download Termux and Termux Widget apps which are both free in F Droid.
 - Run `pkg install ffmpeg`
 - Take note of your IP4 Address (Settings / About Phone).  Consider setting WiFi to Static IP instead of DHCP.
 - Ensure phone has a power source and Battery Saver is turned off.
+
+
+##### Termux automation
+
+```
+Ensure Termux and Termux Widget are installed from F Droid
+Then in Termux...
+
+mkdir -p $HOME/.shortcuts
+touch $HOME/./shortcuts/server.sh
+chmod +x $HOME/./shortcuts/server.sh
+```
 
 #### IOS Device
 
