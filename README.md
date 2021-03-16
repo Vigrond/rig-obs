@@ -29,11 +29,13 @@ This is still a work in progress.  This documentation mostly assumes:
 * ffmpeg
 * hevc/h265, h264
 
+### Tested Devices
+
+See https://github.com/Vigrond/rig-obs/blob/gh-pages/tested_devices.txt
+
 ### General Idea
 
 Use h265/hevc to efficiently get your OBS stream off your main rig, and have another device encode it for your streaming service.
-
-
 
 ### Preparing your Streaming Rig
 
