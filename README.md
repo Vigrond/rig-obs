@@ -8,6 +8,8 @@ NDI not required!
 
 ### Disclaimer
 
+Last updated 03/16/20211
+
 This is still a work in progress.  This documentation mostly assumes:
 
 * an Android device as your streaming rig and Twitch as your streaming service, as that is the only thing I have tested.
