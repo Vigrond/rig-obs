@@ -33,6 +33,8 @@ This is still a work in progress.  This documentation mostly assumes:
 
 Use h265/hevc to efficiently get your OBS stream off your main rig, and have another device encode it for your streaming service.
 
+
+
 ### Preparing your Streaming Rig
 
 Your streaming rig can be a smartphone, a PC, a mac, an Ubuntu box, or anything that can run ffmpeg or OBS.
@@ -56,7 +58,7 @@ Consider https://ish.app/ for a terminal app on IOS.
 
 *  Install ffmpeg or OBS Studio
 
-If you are using OBS Studio on your streaming rig, you can ignore the ffmpeg command below and instead use a Media Source, with `local file` turned off and the `tcp://` url discussed in the OBS Setup section as the input.  You are then free to use libx264 or NVENC h264 for encoding to Twitch.
+If you are using OBS Studio on your streaming rig, you can ignore the ffmpeg command below and instead use a Media Source, with `local file` turned off and the `tcp://` url discussed in the OBS Setup section as the input.  You are then free to use libx264 or NVENC h264 for encoding to Twitch using the OBS interface.
 
 ### Twitch Example
 
