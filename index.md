@@ -47,8 +47,12 @@ ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?lis
 
 | Setting       | Value                     |  Notes         |
 | ------------- | -------------             |  ------------- |
-| `Type`         | `Custom Output (FFmpeg)`    |  We will use ffmpeg  |
-| `Output Type`   | `Output to URL`             |  We will stream directly to our device  |
+| `Type`         | *Custom Output (FFmpeg)*    |  We will use ffmpeg  |
+| `FFmpeg Output Type`   | *Output to URL*             |  We will stream directly to our device  |
+| `File path or URL`   | *tcp://192.168.1.252:9000*             |  Need TCP since we will be sending data over WiFi  |
+| `Output Type`   | *Output to URL*             |  We will stream directly to our device  |
+| `Output Type`   | *Output to URL*             |  We will stream directly to our device  |
+| `Output Type`   | *Output to URL*             |  We will stream directly to our device  |
 
 ```
 Type                    Custom Output (FFmpeg)
