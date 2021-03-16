@@ -33,6 +33,8 @@ This is still a work in progress.  This documentation mostly assumes:
 
 See https://github.com/Vigrond/rig-obs/blob/gh-pages/tested_devices.txt
 
+Have you tested a device?  Please see "Feedback" at the bottom of this document
+
 ### General Idea
 
 Use h265/hevc to efficiently get your OBS stream off your main rig, and have another device encode it for your streaming service.
