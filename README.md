@@ -145,4 +145,6 @@ coming soon...
 
 ### Support or Feedback
 
+Did it work for you?  Please post about your findings in Discussions.
+
 Head over to [Issues](https://github.com/Vigrond/rig-obs/issues) for Support or [Discussions](https://github.com/Vigrond/rig-obs/discussions) for feedback
