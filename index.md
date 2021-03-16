@@ -1,6 +1,6 @@
-## Welcome to [rig-obs](https://github.com/Vigrond/rig-ob)
+## Welcome to [rig-obs](https://github.com/Vigrond/rig-obs)
 
-This page will serve as a basic guide to get your own rig-obs project going.
+This [page](https://vigrond.github.io/rig-obs/) will serve as a basic guide to get your own rig-obs project going.
 
 Using native OBS and ffmpeg, you can have your own streaming rig setup on another PC, a smartphone, or any device that can run ffmpeg.
 
@@ -47,8 +47,8 @@ ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?lis
 
 | Setting       | Value                     |  Notes         |
 | ------------- | -------------             |  ------------- |
-| Type          | Custom Output (FFmpeg)    |  We will use ffmpeg  |
-| Output Type   | Output to URL             |  We will stream directly to our device  |
+| `Type`         | `Custom Output (FFmpeg)`    |  We will use ffmpeg  |
+| `Output Type`   | `Output to URL`             |  We will stream directly to our device  |
 
 ```
 Type                    Custom Output (FFmpeg)
