@@ -1,4 +1,4 @@
-## Welcome to rig-obs
+## Welcome to [rig-obs](https://github.com/Vigrond/rig-ob)
 
 This page will serve as a basic guide to get your own rig-obs project going.
 
@@ -24,4 +24,4 @@ NDI not required!
 
 ### Support or Feedback
 
-Head over to [Issues] for Support or [Discussions] for feedback
+Head over to [Issues](https://github.com/Vigrond/rig-obs/issues) for Support or [Discussions](https://github.com/Vigrond/rig-obs/discussions) for feedback
