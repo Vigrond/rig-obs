@@ -45,6 +45,11 @@ ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?lis
 
 ##### Output / Recording
 
+| Setting       | Value                     |  Notes         |
+| ------------- | -------------             |  ------------- |
+| Type          | Custom Output (FFmpeg)    |  We will use ffmpeg  |
+| Output Type   | Output to URL             |  We will stream directly to our device  |
+
 ```
 Type                    Custom Output (FFmpeg)
 FFmpeg                  Output Type Output to URL
@@ -75,6 +80,12 @@ Common FPS              48
 ```
 Color Format            NV12
 ```
+
+### Things to consider
+
+* The hevc is heavy to decode.  The device must both decode and encode to h264 for twitch digestion.  hevc bitrate matters!
+* h264 bitrate should be the max your network can perform, since you do not have to worry about decoding it
+* If you find your stream latency lagging behind increasingly over time, your rig-obs device is struggling to decode and encode!
 
 ### Support or Feedback
 
