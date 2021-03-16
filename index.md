@@ -30,7 +30,7 @@ This is still a work in progress.  This documentation mostly assumes an Android 
 
 Use h265/hevc to efficiently get your OBS stream off your main rig, and have another device encode it for your streaming service.
 
-### Preparing your Rig
+### Preparing your Streaming Rig
 
 Your streaming rig can be a smartphone, a PC, a mac, an Ubuntu box, or anything that can run ffmpeg or OBS.
 
