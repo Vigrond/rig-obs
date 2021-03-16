@@ -6,6 +6,8 @@ Using native OBS and ffmpeg, you can have your own streaming rig setup on anothe
 
 NDI not required!
 
+{:toc}
+
 ### Demo
 
 * Pixel 4A
