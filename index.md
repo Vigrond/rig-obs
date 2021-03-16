@@ -6,7 +6,9 @@ Using native OBS and ffmpeg, you can have your own streaming rig setup on anothe
 
 NDI not required!
 
-{:toc}
+### Disclaimer
+
+This is still a work in progress.  This documentation mostly assumes an Android device as your rig, as that is the only thing I have tested.
 
 ### Demo
 
@@ -24,9 +26,38 @@ NDI not required!
 * ffmpeg
 * hevc/h265, h264
 
+### General Idea
+
+Use h265/hevc to efficiently get your OBS stream off your main rig, and have another device encode it for your streaming service.
+
+### Preparing your Rig
+
+Your streaming rig can be a smartphone, a PC, a mac, an Ubuntu box, or anything that can run ffmpeg or OBS.
+
+#### Android device
+
+For this example, we'll setup ffmpeg on an Android device.
+
+- Download and install [Termux](https://github.com/termux/termux-app) from the Play store, or the F Droid store.
+- Run `pkg install ffmpeg`
+- Take note of your IP4 Address (Settings / About Phone).  Consider setting WiFi to Static IP instead of DHCP.
+- Ensure phone has a power source and Battery Saver is turned off.
+
+#### IOS Device
+
+Untested.  If you would like to contribute to this documentation, please open an issue or discussion on this project.
+
+Consider https://ish.app/ for a terminal app on IOS.
+
+#### PC, Mac, Linux
+
+*  Install ffmpeg or OBS Studio
+
+If you are using OBS Studio on your streaming rig, you can ignore the ffmpeg command below and instead use a Media Source, with `local file` turned off and the `tcp://` url discussed in the OBS Setup section as the input.  You are then free to use libx264 or NVENC h264 for encoding to Twitch.
+
 ### Twitch Example
 
-#### Rig ffmpeg settings
+#### Rig ffmpeg command
 
 This should be ran **first** so the server is ready before OBS begins recording.
 
