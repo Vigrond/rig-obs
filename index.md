@@ -45,38 +45,27 @@ ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?lis
 
 ##### Output / Recording
 
-| Setting       | Value                     |  Notes         |
-| ------------- | -------------             |  ------------- |
-|  Output / Recording         |     |   |
-| `Type`         | *Custom Output (FFmpeg)*    |  We will use ffmpeg  |
-| `FFmpeg Output Type`   | *Output to URL*             |  We will stream directly to our device  |
-| `File path or URL`   | *tcp://192.168.1.252:9000*             |  Need TCP since we will be sending data over WiFi  |
-| `Container format`   | *mpegts*             |  mpegts supports hevc/h265  |
-| `Video Bitrate`   | *4500Kbps*             |  hevc is heavy to decode, we must be gentle here.  Try about 70% of your twitch bitrate first.  |
-| `Keyframe interval`   | *250*             |  We want high compression, so we choose a high I-frame interval  |
-| `Video Encoder `   | *hevc_nvenc*             |  Our hevc encoder that makes this possible  |
-| `Video Encoder Settings`   | *preset=7 zerolatency=1 profile=rext*             |  We want low latency.  Rext profile is better for our purpose https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7265015  |
-| `Audio Encoder`   | *aac*             |  Choosing `aac` here will let us skip decoding audio and just copy  |
+| Setting       | Value                                                   |  Notes         |
+| ------------- | -------------                                           |  ------------- |
+|  **Output / Recording**      |                                          |                |
+| `Type`                       | *Custom Output (FFmpeg)*                 |  We will use ffmpeg  |
+| `FFmpeg Output Type`         | *Output to URL*                          |  We will stream directly to our device  |
+| `File path or URL`           | *tcp://192.168.1.252:9000*               |  Need TCP since we will be sending data over WiFi  |
+| `Container format`           | *mpegts*                                 |  mpegts supports hevc/h265  |
+| `Video Bitrate`              | *4500Kbps*                               |  hevc is heavy to decode, we must be gentle here.  Try about 70% of your twitch bitrate first.  |
+| `Keyframe interval`          | *250*                                    |  We want high compression, so we choose a high I-frame interval  |
+| `Video Encoder `             | *hevc_nvenc*                             |  Our hevc encoder that makes this possible  |
+| `Video Encoder Settings`     | *preset=7 zerolatency=1 profile=rext*    |  We want low latency.  Rext profile is better for our purpose https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7265015    |
+| `Audio Encoder`              | *aac*                                    |  Choosing `aac` here will let us skip decoding audio and just copy  |
+|  **Audio**                   |                                          |                |
+| `Sample Rate`                | *44.1 kHz*                               |  Lower CPU Usage, not super necessary.  |
+|  **Video**                   |                                          |                |
+| `Output Resolution`          | *1280x720*                               |  720p.  We want to use the efficiency of OBS and hevc while we can.  |
+| `Downscale Filter`           | *Lanczos*                                |  Lanczos.  |
+| `Common FPS`                 | *48*                                     |  While a higher value could theoretically improve latency, we want to make it easy on the decoder.  |
+|  **Advanced**                   |                                          |                |
+| `Color Format`                | *NV12*                               |  NV12.  |
 
-##### Audio
-
-```
-Sample Rate             44.1 kHz
-```
-
-##### Video
-
-```
-Output Resolution       1280x720
-Downscale Filter        Lanczos
-Common FPS              48
-```
-
-##### Advanced
-
-```
-Color Format            NV12
-```
 
 ### Things to consider
 
