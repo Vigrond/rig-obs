@@ -31,21 +31,48 @@ This should be ran first so the "listener" is setup before OBS begins recording.
 * 720p @ 48fps
 * IP staticly set to 192.168.1.252 on rig
 * Assumes network performance capable of 6000 bitrate
-* Assumes 8 core processor for 16 threads
+* Assumes 8 core processor for 16 threads 
+* Assumes an Android device with ARM processor
 
 `ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?listen=1" -c:v libx264 -x264opts keyint=96:no-scenecut -r 48 -b:v 6000k -minrate 6000k -maxrate 6000k -bufsize 4500k  -profile:v baseline -tune zerolatency -frame_drop_threshold 5.0 -preset superfast -threads 16 -g 96 -keyint_min 48 -c:a copy -bsf:a aac_adtstoasc -flvflags no_duration_filesize -f flv " rtmp://{ingest}.contribute.live-video.net/app/{stream_key}"`
 
 #### OBS Setup
 
 * Assumes NVIDIA graphics card with hevc_nvenc support
+* Assumes an Android device with ARM processor
 
-Output / Recording
+##### Output / Recording
 
-* `Type` Custom Output (FFmpeg)
-* `FFmpeg Output Type` Output to URL
-* `File path or URL` tcp://192.168.1.252:9000
-* `Container format` mpegts
+```
+Type                    Custom Output (FFmpeg)
+FFmpeg                  Output Type Output to URL
+File path or URL        tcp://192.168.1.252:9000
+Container format        mpegts
+Video Bitrate           4500Kbps
+Keyframe interval       250
+Video Encoder           hevc_nvenc
+Video Encoder Settings  preset=7 zerolatency=1 profile=rext
+Audio Encoder           aac
+```
+##### Audio
 
+```
+Sample Rate             44.1 kHz
+```
+
+##### Video
+
+```
+Output Resolution       1280x720
+Downscale Filter        Lanczos
+Common FPS              48
+```
+
+##### Advanced
+
+```
+Color Format            NV12
+```
 
 ### Support or Feedback
 
