@@ -8,7 +8,10 @@ NDI not required!
 
 ### Disclaimer
 
-This is still a work in progress.  This documentation mostly assumes an Android device as your streaming rig, as that is the only thing I have tested.
+This is still a work in progress.  This documentation mostly assumes:
+
+* an Android device as your streaming rig and Twitch as your streaming service, as that is the only thing I have tested.
+* You are somewhat familiar with OBS, ffmpeg, and Twitch streaming.
 
 ### Demo
 
@@ -67,7 +70,9 @@ This should be ran **first** so the server is ready before OBS begins recording.
 * Assumes 8 core processor for 16 threads 
 * Assumes an Android device with ARM processor
 
-Full command for easy copy paste:
+This ffmpeg command starts a TCP server that will listen for OBS from your main rig.  Once it begins recieving, it will then encode to x264 and stream to the Twitch ingest server.
+
+Full command for easy copy paste (Don't forget to put your ingest and streamkey in):
 
 ```
 ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?listen=1" -c:v libx264 -x264opts keyint=96:no-scenecut -r 48 -b:v 6000k -minrate 6000k -maxrate 6000k -bufsize 4500k  -profile:v baseline -tune zerolatency -frame_drop_threshold 5.0 -preset superfast -threads 16 -g 96 -keyint_min 48 -c:a copy -bsf:a aac_adtstoasc -flvflags no_duration_filesize -f flv " rtmp://{ingest}.contribute.live-video.net/app/{stream_key}"
@@ -131,6 +136,10 @@ Once the ffmpeg command on your streaming rig is running and accepting connectio
 * The hevc is heavy to decode.  The device must both decode and encode to h264 for twitch digestion.  hevc bitrate matters!
 * h264 bitrate should be the max your network can perform, since you do not have to worry about decoding it
 * If you find your stream latency lagging behind increasingly over time, your rig-obs device is struggling to decode and encode!
+
+### Troubleshooting
+
+coming soon...
 
 ### Support or Feedback
 
