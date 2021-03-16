@@ -2,9 +2,9 @@
 
 This [page](https://vigrond.github.io/rig-obs/) will serve as a basic guide to get your own rig-obs project going.
 
-* rig-obs simply allows you to setup a streaming rig away from your main rig.  This setup is commonly called a Dual PC streaming setup, but the phrase isn't accurate in this case because with rig-obs you can use a wide array of devices - not just PCs.
-* rig-obs is simply a technical guide, no code, plugin, or software outside of OBS and ffmpeg is needed.
-* rig-obs has been shown to work on smartphones such as the Pixel 4a.  It can work with any device that can run OBS Studio or ffmpeg including Windows, OS X, Linux, Android, and IOS.
+* `rig-obs` simply allows you to setup a streaming rig away from your main rig.  This setup is commonly called a Dual PC streaming setup, but the phrase isn't accurate in this case because with rig-obs you can use a wide array of devices - not just PCs.
+* `rig-obs` is simply a technical guide, no code, plugin, or software outside of OBS and ffmpeg is needed.
+* `rig-obs` has been shown to work on smartphones such as the Pixel 4a.  It can work with any device that can run OBS Studio or ffmpeg including Windows, OS X, Linux, Android, and IOS.
 
 See the demo below for a quick video showing a Pixel 4a encoding an Overwatch stream to Twitch.tv.  Note the near 0 CPU usage of OBS Studio.
 
