@@ -9,7 +9,7 @@ NDI not required!
 ### Demo
 
 * Pixel 4A
-* 720p @ 48fps easy
+* 720p @ 48fps
 * Low latency and twitch stable
 * < 1% CPU usage on OBS
 * Works over WiFi
