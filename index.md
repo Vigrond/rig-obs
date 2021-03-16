@@ -66,7 +66,7 @@ ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?lis
 |  **Advanced**                   |                                          |                |
 | `Color Format`                | *NV12*                               |  NV12.  |
 
-https://raw.githubusercontent.com/Vigrond/rig-obs/gh-pages/rigobs_output.jpg
+![image](https://raw.githubusercontent.com/Vigrond/rig-obs/gh-pages/rigobs_output.jpg)
 
 ### Things to consider
 
