@@ -143,6 +143,10 @@ Once the ffmpeg command on your streaming rig is running and accepting connectio
 
 coming soon...
 
+### Ideas for the Future
+
+* Hardware support for device GPUS (Adreno, etc) using [h264_vaapi](https://trac.ffmpeg.org/wiki/Hardware/VAAPI) with a custom built ffmpeg binary.  Rooted device may be required.
+
 ### Support or Feedback
 
 Did it work for you?  Please post about your findings in Discussions.
