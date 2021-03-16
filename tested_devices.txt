@@ -1,0 +1,13 @@
+Google Pixel 4a
+OS 	Android 10, upgradable to Android 11
+Chipset 	Qualcomm SDM730 Snapdragon 730G (8 nm)
+CPU 	Octa-core (2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver)
+GPU 	Adreno 618
+
+Results:
+Twitch stable 720p@48fps
+Low Latency
+hevc settings:
+4500kbs preset=7 zerolatency=1 profile=rext
+ffmpeg settings:
+ffmpeg -loglevel warning -r 48 -fflags nobuffer -i "tcp://192.168.1.252:9000?listen=1" -c:v libx264 -x264opts keyint=96:no-scenecut -r 48 -b:v 6000k -minrate 6000k -maxrate 6000k -bufsize 4500k  -profile:v baseline -tune zerolatency -frame_drop_threshold 5.0 -preset superfast -threads 16 -g 96 -keyint_min 48 -c:a copy -bsf:a aac_adtstoasc -flvflags no_duration_filesize -f flv " rtmp://{ingest}.contribute.live-video.net/app/{stream_key}"
